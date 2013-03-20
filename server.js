@@ -4,6 +4,8 @@
  */
 
 var express = require('express')
+  , cons = require('consolidate')
+  , swig = require('swig')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
@@ -11,10 +13,17 @@ var express = require('express')
 
 var app = express();
 
+swig.init({
+    root: './views',
+    allowErrors: true // allows errors to be thrown and caught by express instead of suppressed by Swig
+});
+
+app.set('views', '/path/to/views/directory/');
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
+  app.engine('.html', cons.swig);
+  app.set('view engine', 'html');
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
