@@ -1,14 +1,10 @@
 {% extends 'layout.html' %}
-
 {% block title %}{% parent %}{{title}}{% endblock %}
-
-{% block head %}
-  {% parent %}
-{% endblock %}
-
+{% block head %}{% parent %}{% endblock %}
 {% block content %}
 <h1>{{title}}</h1>
 <p>Welcome to Express in Azure with Swig!</p>
 
 <h1>Good night Maddy, have sweet dreams!</h1>
+<h2>Andrew get to work!</h2>
 {% endblock %}
