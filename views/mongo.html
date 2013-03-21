@@ -2,9 +2,9 @@
 {% block title %}{% parent %}{{title}}{% endblock %}
 {% block head %}{% parent %} <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular-resource.min.js"></script>
-    <script src="scripts/project.js"></script>
-    <script src="scripts/mongolab.js"></script>{% endblock %}
+    <script src="javascripts/project.js"></script>
+    <script src="javascripts/mongolab.js"></script>{% endblock %}
 {% block content %}
-  	<h2>JavaScript Projects</h2>
-    <div ng-view></div>
+ 	<h1>Mongo Manip</h1>
+  	<div ng-view></div>
 {% endblock %}
