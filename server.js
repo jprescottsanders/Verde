@@ -8,6 +8,7 @@ var express = require('express')
   , swig = require('swig')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , mongo = require('./routes/mongo')
   , http = require('http')
   , path = require('path');
 
@@ -37,6 +38,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/mongo', mongo.index)
+
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
